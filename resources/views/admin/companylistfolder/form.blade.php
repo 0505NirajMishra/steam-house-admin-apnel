@@ -52,7 +52,7 @@
 
             <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.phone', 1) }}</label>
                 <div class="col-lg-4 fv-row">
-                    {!! Form::number('phone', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.registration_number', 1)]) !!}
+                    {!! Form::number('phone', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('Phone Number', 1)]) !!}
                 </div>
 
 
@@ -73,7 +73,7 @@
 
 
 
-            <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.image', 1) }}</label>
+            <label class="col-lg-2 col-form-label fw-bold fs-6">{{ trans_choice('content.image', 1) }}</label>
             <div class="col-lg-4 fv-row">
                 <input type="file" name="image" class="form-control form-control-lg form-control-solid">
             </div>
@@ -108,7 +108,7 @@
                 <div class="col-lg-4 fv-row">
                     {!! Form::text('c_address', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.registration_address', 1)]) !!}
                 </div>
-                <label class="col-lg-2 col-form-label required fw-bold fs-6">Latitude</label>
+                <label class="col-lg-2 col-form-label  fw-bold fs-6">Latitude</label>
                 <div class="col-lg-4 fv-row">
                     {!! Form::text('latitude', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.latitude', 1)]) !!}
                 </div>
@@ -118,11 +118,11 @@
 
         <div class="row mb-6">
 
-            <label class="col-lg-2 col-form-label required fw-bold fs-6">Longitude</label>
+            <label class="col-lg-2 col-form-label fw-bold fs-6">Longitude</label>
                 <div class="col-lg-4 fv-row">
                     {!! Form::text('longitude', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.longitude', 1)]) !!}
                 </div>
-                <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.about', 1) }}</label>
+                <label class="col-lg-2 col-form-label  fw-bold fs-6">{{ trans_choice('content.about', 1) }}</label>
                 <div class="col-lg-4 fv-row">
                     {!! Form::text('about', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.registration_about', 1)]) !!}
                 </div>
@@ -130,16 +130,7 @@
         </div>
 
 
-        {{-- <div class="row mb-6">
-            <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.latitude', 1) }}</label>
-                <div class="col-lg-4 fv-row">
-                    {!! Form::text('latitude', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.latitude', 1)]) !!}
-                </div>
-            <label class="col-lg-2 col-form-label required fw-bold fs-6">{{ trans_choice('content.longitude', 1) }}</label>
-                <div class="col-lg-4 fv-row">
-                    {!! Form::text('longitude', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.longitude', 1)]) !!}
-                </div>
-        </div> --}}
+       
 
         <div class="row mb-6">
 
