@@ -70,10 +70,7 @@
         </div>
 
 
-        {{-- <label class="col-lg-2 col-form-label required fw-bold fs-6"/>Username</label>
-        <div class="col-lg-4 fv-row">
-            {!! Form::text('username', null, ['min' => 2, 'max' => 6, 'value' => 2, 'class' => 'form-control form-control-lg form-control-solid', 'placeholder' => trans_choice('content.username', 1)]) !!}
-        </div> --}}
+       
 
         <label
             class="col-lg-2 col-form-label required fw-bold fs-6">Username</label>

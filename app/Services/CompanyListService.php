@@ -10,15 +10,12 @@ class CompanyListService
 
     public static function create(array $data)
     {
-
-
         $data = User::create($data);
         return $data;
     }
 
     public static function update(array $data, User $user)
     {
-
 
         $data = User::where('id',$data['id'])->update($data);
 

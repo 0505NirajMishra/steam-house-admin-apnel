@@ -26,31 +26,30 @@ class CompanyEditRequest extends FormRequest
 
         if (!request()->is('admin/users/create')) {
             return [
-                //  'meter_id' => 'required|unique:users,meter_id',
-                // 'username' => 'required|max:150|unique:users,username',
-                // 'name' => 'required|max:150',
-                // 'email' => 'required|email|unique:users,email',
-                // 'phone' => 'required|unique:users,phone',
-                // 'about' => 'required',
-
-                'c_password' => 'same:password',
+                'meter_id' => 'required',
+                'username' => 'required',
+                'name' => 'required|max:150',
+                'email' => 'required|email',
+                'phone' => 'required|numeric|digits:10',
+                'c_address'=>'required',
+                'password' => 'required',
+                'c_address' => 'required',
+                'c_password' => 'required_with:password|same:password',
                 // 'role' => 'required',
-
-
-
             ];
 
         } else {
             return [
-                //  'meter_id' => 'required|unique:users,meter_id',
-                // 'username' => 'unique:users,username',
-                // 'name' => 'required',
-                // 'email' => 'required|email|unique:users,email',
-                // 'phone' => 'required|unique:users,phone',
-                // 'about' => 'required',
-
-                'c_password' => 'same:password',
-                // 'role' => 'required',
+                'meter_id' => 'required',
+                'username' => 'required',
+                'name' => 'required',
+                'email' => 'required|email',
+                'phone' => 'required|numeric|digits:10',
+                'c_address'=>'required',
+                'password' => 'required',
+                'c_address' => 'required',
+                'c_password' => 'required_with:password|same:password',
+                'role' => 'required',
             ];
         }
     }
@@ -58,21 +57,19 @@ class CompanyEditRequest extends FormRequest
     public function messages()
     {
         return [
-            // 'meater_id.required' => __('validation.required', ['attribute' => 'Manager Id']),
-            // 'name.required' => __('validation.required', ['attribute' => 'Name']),
-            // 'email.required' => __('validation.required', ['attribute' => 'Email']),
-            // 'email.email' => __('validation.email', ['attribute' => 'Email']),
-            // 'email.unique' => __('validation.unique', ['attribute' => 'Email']),
-            // 'username.required' => __('validation.required', ['attribute' => 'Username']),
-            // 'username.unique' => __('validation.unique', ['attribute' => 'Username']),
-            // 'phone.required' => __('validation.required', ['attribute' => 'Phone']),
-            // 'phone.phone' => __('validation.phone', ['attribute' => 'Phone']),
-            // 'phone.unique' => __('validation.unique', ['attribute' => 'Phone']),
-            // 'meter_id.required' => __('validation.required', ['attribute' => 'Manager Id']),
-            // 'about.required' => __('validation.required', ['attribute' => 'About']),
-            // 'password.required' => __('validation.required', ['attribute' => 'password']),
-            'c_password.required' => __('validation.required', ['attribute' => 'confirm password']),
-            // 'role.required' => __('validation.required', ['attribute' => 'role']),
+             // 'meater_id.required' => __('validation.required', ['attribute' => 'Manager Id']),
+             'name.required' => __('validation.required', ['attribute' => 'Name']),
+             'email.required' => __('validation.required', ['attribute' => 'Email']),
+             'email.email' => __('validation.email', ['attribute' => 'Email']),
+             'email.unique' => __('validation.unique', ['attribute' => 'Email']),
+             'username.required' => __('validation.required', ['attribute' => 'Username']),
+             'phone.required' => __('validation.required', ['attribute' => 'Phone']),
+             'meter_id.required' => __('validation.required', ['attribute' => 'Meter ID']),
+             'address.required' => __('validation.required', ['attribute' => 'Location']),
+             'password.required' => __('validation.required', ['attribute' => 'password']),
+             'c_address.required' => __('validation.required', ['attribute' => 'Address']),
+             'c_password.required' => __('validation.required', ['attribute' => 'confirm password']),
+             'role.required' => __('validation.required', ['attribute' => 'role']),
         ];
     }
 }

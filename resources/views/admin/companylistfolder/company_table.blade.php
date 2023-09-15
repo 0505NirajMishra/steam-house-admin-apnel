@@ -56,8 +56,7 @@
         <img src="{{ asset('blank_user.PNG') }}" style="width:50px; height:50px;border-radius: 25px;" />
         @endif
     </td>
-    {{-- <td>{{$user->address}}</td> --}}
-    {{-- <td>{{$user->longitude}}</td> --}}
+
     <td>{{$result->c_address}}</td>
     <td>{{$result->about}}</td>
     <td>
