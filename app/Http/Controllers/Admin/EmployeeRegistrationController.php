@@ -19,7 +19,7 @@ class EmployeeRegistrationController extends Controller
     protected $mls, $change_password, $assign_role, $uploads_image_directory;
     protected $index_view, $create_view, $edit_view, $detail_view, $tabe_view, $product_history_view;
     protected $index_route_name, $create_route_name, $detail_route_name, $edit_route_name;
-    protected $bookService, $utilityService, $intrestService;
+    protected $bookService, $utilityService, $intrestService,$user;
 
     public function __construct()
     {
@@ -119,6 +119,7 @@ class EmployeeRegistrationController extends Controller
     public function update(Request $request, User $user)
     {
         $input = $request->except(['_method', '_token', 'proengsoft_jsvalidation']);
+        $id = $input['id'];
         if (!empty($input['image'])) {
             $manager_image = $request->file('image');
             $picture = FileService::fileUploaderWithoutRequest($manager_image, 'employees/image/');
@@ -126,11 +127,13 @@ class EmployeeRegistrationController extends Controller
 
         }
 
-        if ($input['password'] != '' || $input['c_password'] != '') {
-            $input['password'] = Hash::make($request->password);
-            $input['c_password'] = Hash::make($request->c_password);
+        $details=User::where('id',$id)->first();
+        if($details->password===$input['password']) {
+            $input['password'] = $details->password;
+            // $input['c_password'] = Hash::make($request->c_password);
+        }else{
+                 $input['password'] = Hash::make($request->password);
         }
-
         if (!empty($input['username'])) {
 
             $newuser = User::where('username', $request->username)->get();

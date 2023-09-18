@@ -799,7 +799,15 @@ class AuthService
 
     public static function steamlogout(Request $request)
     {
-        self::steamAuth();
+        $data=self::steamAuth();
+        
+        if($data){
+            $input = array();
+            $input['fcm_token'] = NULL;
+       
+
+        $updatedata = DB::table('users')->where('id',$data->id)->update($input);
+        }
         JWTAuth::invalidate(JWTAuth::getToken());
         return response()->json([
             'status' => true,

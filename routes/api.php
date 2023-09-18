@@ -38,8 +38,6 @@ Route::group(['middleware' => ['optimizeImages'], 'prefix' => '/v1/customer', 'n
         Route::post('contactUs', 'contactUs');
         Route::post('forgetPassword', 'forgetPassword');
 
-
-
          // steam house(home)
          Route::post('steamhouses', 'steamhouseslist');
          // Employee Feedback
