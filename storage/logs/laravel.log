@@ -51,3 +51,51 @@
 #48 C:\\xampp\\htdocs\\steam-house-admin-main\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #49 {main}
 "} 
+[2023-09-18 18:34:53] local.ERROR: Uncaught ReflectionException: Class "Tymon\JWTAuth\Middleware\GetUserFromToken" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionMethod->__construct('Tymon\\JWTAuth\\M...', 'handle')
+#1 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"Tymon\\JWTAuth\\Middleware\\GetUserFromToken\" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionMethod->__construct('Tymon\\\\JWTAuth\\\\M...', 'handle')
+#1 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
+[2023-09-18 18:34:53] local.ERROR: Uncaught Error: Class "App\Models\Model" not found in C:\xampp\htdocs\steam-house-admin-main\app\Models\SteamHouseModel copy.php:17
+Stack trace:
+#0 Command line code(1): include_once()
+#1 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Error: Class \"App\\Models\\Model\" not found in C:\\xampp\\htdocs\\steam-house-admin-main\\app\\Models\\SteamHouseModel copy.php:17
+Stack trace:
+#0 Command line code(1): include_once()
+#1 {main}
+  thrown at C:\\xampp\\htdocs\\steam-house-admin-main\\app\\Models\\SteamHouseModel copy.php:17)
+[stacktrace]
+#0 {main}
+"} 
+[2023-09-19 16:22:20] local.ERROR: Uncaught ReflectionException: Class "Tymon\JWTAuth\Middleware\GetUserFromToken" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionMethod->__construct('Tymon\\JWTAuth\\M...', 'handle')
+#1 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"Tymon\\JWTAuth\\Middleware\\GetUserFromToken\" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionMethod->__construct('Tymon\\\\JWTAuth\\\\M...', 'handle')
+#1 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
+[2023-09-19 16:22:20] local.ERROR: Uncaught Error: Class "App\Models\Model" not found in C:\xampp\htdocs\steam-house-admin-main\app\Models\SteamHouseModel copy.php:17
+Stack trace:
+#0 Command line code(1): include_once()
+#1 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Error: Class \"App\\Models\\Model\" not found in C:\\xampp\\htdocs\\steam-house-admin-main\\app\\Models\\SteamHouseModel copy.php:17
+Stack trace:
+#0 Command line code(1): include_once()
+#1 {main}
+  thrown at C:\\xampp\\htdocs\\steam-house-admin-main\\app\\Models\\SteamHouseModel copy.php:17)
+[stacktrace]
+#0 {main}
+"} 
