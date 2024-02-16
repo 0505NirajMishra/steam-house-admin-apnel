@@ -29,6 +29,7 @@ class ServiceRequestModel extends Model
        'time',
        'otp',
        'mob_verify',
+       'riser_name',
 
     ];
 }

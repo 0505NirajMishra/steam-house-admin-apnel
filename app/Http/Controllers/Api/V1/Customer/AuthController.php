@@ -416,6 +416,13 @@ public function UserList()
     }
 
 
+    //Manager Companys
+    public function managerCompany(Request $request)
+    {
+
+        return $this->apiAuthService->managerCompany($request);
+    }
+
 // Customer Feedback Add And Delete And List Api
     //add
     public function reviewapi(ReviewRequest $request)

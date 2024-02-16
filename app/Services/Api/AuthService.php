@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Http;
 
 class AuthService
 {
@@ -930,6 +931,44 @@ class AuthService
 
 
 
+   /**
+     * Filter  Manger Companys
+     *
+     * @param  \Illuminate\Http\Request  $request and $id
+     * @return \Illuminate\Http\Response
+     */
+    public static function managerCompany(Request $request){  
+        $companydata=DB::table('users')->where('manager_id',$request->manager_id)->where('role',0)->get();
+      
+        foreach($companydata as $data){
+
+           $livedata= Http::get('http://122.187.205.206:5008/api/Values/GetAllData?key=steam8108');
+           print_r($livedata);
+           die;
+        }
+
+           if ($companydata) {
+               return response()->json(
+                   [
+                       'status' => true,
+                       'message' => 'Account Deleted Successfully',   
+                   ],
+                   200
+               );
+           } else {
+               return response()->json(
+                   [
+                       'status' => false,
+                       'message' => 'Data Not Deleted',
+                       'data' =>[],
+                   ],
+                   200
+               );
+           }
+   }
+
+
+
 
 
 
@@ -938,7 +977,7 @@ class AuthService
         self::getAuthUser();
         JWTAuth::invalidate(JWTAuth::getToken());
         return response()->json([
-            'status' => true,
+            'status' => true, 
             'message' => 'Successfully logged out',
         ]);
     }
@@ -1130,11 +1169,32 @@ class AuthService
             'address' => $request->address,
             'status' => $request->status,
             'otp' => $request->otp,
-            'date' => $request->date,
-            'time' => $request->time,
+            'riser_name' => $request->riser_name,
+            // 'date' => $request->date,
+            // 'time' => $request->time,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
+
+        $currentDateTime = Carbon::now();
+        // $specificTime = Carbon::createFromFormat('h:i A', $request->time);  
+         
+        // if($specificTime < $currentDateTime){
+         
+        //     return response()->json(
+        //         [
+        //             'status' => false,
+        //             'message' => 'Time Must Be Greater than Current Time',
+        //         ],
+        //         200
+        //     );
+        // }else{
+            if(!empty($request->time)){
+                $input['time']=$request->time; 
+            }else{
+             $input['time']=Carbon::now();
+            }
+        // }
 
         if (!empty($request->pictures)) {
             $picture = FileService::multipleImageUploader($request, 'pictures', 'servicerequests/image/');
@@ -1148,7 +1208,6 @@ class AuthService
         // $newmail="dubeyayush000@gmail.com";
         $newmail="customer.care@steamhouse.in";
     
-
         $detail1=array();
         $detail1['title']='SteamHouse';
         $detail1['Service_request']=$request->Service_request;

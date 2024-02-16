@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('date')->nullable();
             $table->string('time')->nullable();
+            $table->string('riser_name')->nullable();
             $table->tinyInteger('status')->default(0)->comment('0:pending,1:assigned,2:inprocess,3:complated');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
